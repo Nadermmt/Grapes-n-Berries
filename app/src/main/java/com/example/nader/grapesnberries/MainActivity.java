@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     void getPage(int position){
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://grapesnberries.getsandbox.com")
+                .baseUrl("http://grapes-n-berries.getsandbox.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         API = retrofit.create(gnbAPI.class);
@@ -121,12 +121,17 @@ public class MainActivity extends AppCompatActivity {
                     .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
 
-                            getPage(1);
+                            getPage(n);
                         }
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
         }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }
