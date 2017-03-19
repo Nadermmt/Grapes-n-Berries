@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     if (product == null) {
                         product = response.body();
-                        mPAdapter = new ProductAdapter(product);
+                        mPAdapter = new ProductAdapter(MainActivity.this, product);
                         mRecyclerView.setAdapter(mPAdapter);
                         loading = true;
                     }
